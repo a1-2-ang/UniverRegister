@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f0f0; text-align: center; margin-top: 80px; }
+    form { background: #fff; padding: 30px; display: inline-block; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { display: block; margin: 10px auto; padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
+    input[type="submit"] { background: #28a745; color: white; cursor: pointer; border: none; }
+    input[type="submit"]:hover { background: #218838; }
+  </style>
+</head>
+<body>
+
+<h2>Crear cuenta</h2>
+<form action="guardar_usuario.php" method="POST">
+  <input type="text" name="nombre_usuario" placeholder="Usuario" required autocomplete="off">
+  <input type="email" name="correo" placeholder="Correo electrónico" required autocomplete="off">
+  <input type="password" name="contrasena" placeholder="Contraseña" required autocomplete="off">
+  <input type="submit" value="Registrarse">
+</form><br>
+<a href="login.html">Iniciar sesion</a>
+</body>
+</html>

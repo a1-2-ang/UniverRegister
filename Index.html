@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UniveRegister</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="grids.css?=v1.2">
+    <link rel="stylesheet" href="estilos.css?=v1.2">
+    <script>
+        function validarFormulario() {
+            const nombre = document.getElementById('nombre').value;
+            const codigo = document.getElementById('codigo').value;
+            const fecha = document.getElementById('fecha').value;
+            const usos = document.getElementById('usos').value;
+
+            if (nombre.trim() === '' || !/^[a-zA-Z\s]+$/.test(nombre)) {
+                alert('Por favor ingresa un nombre válido.');
+                return false;
+            }
+            if (codigo.trim() === '' || isNaN(codigo)) {
+                alert('Por favor ingresa un código numérico.');
+                return false;
+            }
+            if (fecha.trim() === '') {
+                alert('Por favor ingresa una fecha.');
+                return false;
+            }
+            if (usos.trim() === '' || isNaN(usos) || parseInt(usos) === 0) {
+                alert('Por favor ingresa una cantidad válida (mayor que 0).');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu-horizontal">
+            <li><a href="#Equipo">Equipo</a></li>
+            <li><a href="#Contacto">Contacto</a></li>
+            <li><a href="logout.php">Cerrar Sesion</a></li>
+        </ul>
+    </nav>
+    <div class="Dis">
+        <h1>REGISTRO DE HERRAMIENTAS DE CONSTRUCCION</h1>
+    </div>
+    <form action="registrar.php" method="POST" onsubmit="return validarFormulario();" id="registro">
+        <div class="texto">
+            <h2>Registro de Herramienta</h2>
+            <label>Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+        </div>
+        <div class="texto">
+            <label>Código:</label><br>
+            <input type="text" id="codigo" name="codigo" required><br><br>
+        </div>
+        <div class="texto">
+            <label>Fecha:</label><br>
+            <input type="date" id="fecha" name="fecha" required><br><br>
+        </div>
+        <div class="texto">
+            <label>Número de articulos:</label><br>
+            <input type="number" id="usos" name="usos" required min="1"><br><br>
+        </div>
+        <div class="botones">
+            <button type="submit">Registrar</button>
+            <button type="reset">Limpiar</button>
+        </div><br>
+        <div>
+            <a href="consulta.html" class="botones"><button type="button">Consultar</button></a>
+            <a href="actualizar.html" class="botones"><button type="button">Actualizar</button></a>
+            <a href="eliminar.html" class="botones"><button type="button">Eliminar</button></a>
+            <a href="consultaG.php" class="botones"><button type="button">Consulta General</button></a>
+        </div>
+    </form><br><hr><br>
+    <footer id="Centrado">
+        <div>
+            <h3 id="Contacto">Contacto:</h3><br>
+            <i>
+                <p id="Contacto">Contactanos al numero: Llamando a <a href="tel:+523113935535" style="color: blue !important;">311-393-5535</a>,
+                    mensaje
+                    directo a <a
+                        href="sms:+523113935535?body=Hola,%20quisiera%20hacer%20una%20consulta" style="color: blue !important;">311-393-5535</a> o
+                    en su
+                    defecto envia correo con asunto y mensaje a <a
+                        href="mailto:angeltorz2908@gmail.com?subject=Consulta&body=Hola,%20quiero%20hacer%20una%20consulta" style="color: blue !important;">angeltorz2908@gmail.com</a>
+                </p>
+            </i>
+        </div>
+        <br>
+        <div>
+            <h3 id="Equipo">Equipo:</h3>
+            <i>
+                <p id="Equipo">
+                    <img id="imagen" class="w-20 h-20 rounded-full" src="IMG-20250424-WA0025.jpg" alt="Rounded avatar">
+                    Torres Martinez Angel Uriel
+                </p>
+            </i>
+            <br>
+        </div>
+        <div>
+            <i>
+                <p>&copy; 2025 Todos los derechos reservados &copy;</p>
+            </i>
+        </div>
+    </footer>
+</body>
+
+</html>

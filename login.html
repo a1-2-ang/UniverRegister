@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión</title>
+  <style>
+    body { font-family: Arial; background-color: #f0f0f0; text-align: center; margin-top: 80px; }
+    form { background: #fff; padding: 30px; display: inline-block; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { display: block; margin: 10px auto; padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 5px; }
+    input[type="submit"] { background: #007bff; color: white; cursor: pointer; border: none; }
+    input[type="submit"]:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+<h2>Iniciar sesión</h2>
+<form action="verificar_login.php" method="POST">
+  <input type="text" name="nombre_usuario" placeholder="Usuario" required>
+  <input type="password" name="contrasena" placeholder="Contraseña" required>
+  <input type="submit" value="Entrar">
+</form>
+
+</body>
+</html>

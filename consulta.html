@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Herramienta</title>
+    <link rel="stylesheet" type="text/css" href="grids.css?=v1.2">
+    <link rel="stylesheet" href="estilos.css?=v1.2">
+    <script>
+        function validarConsulta() {
+            const codigo = document.getElementById("codigo").value;
+            if (codigo.trim() === "" || isNaN(codigo)) {
+                alert("Por favor ingresa un código numérico válido.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="buscar.php" method="GET" onsubmit="return validarConsulta();" id="registro">
+        <h2>Consulta de Herramienta</h2>
+        <div class="texto">
+            <label for="codigo">Código de herramienta:</label><br>
+            <input type="text" id="codigo" name="codigo" required><br><br>
+        </div>
+        <div class="botones">
+            <button type="submit">Consultar</button>
+            <button type="reset">Limpiar</button>
+        </div>
+        <div>
+            <a href='Index.html' class="botones"><input type="button" value="← Volver"></a>
+        </div>
+    </form>
+</body>
+
+</html>
