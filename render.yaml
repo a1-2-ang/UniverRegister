@@ -3,6 +3,6 @@ services:
     name: sitio-php
     env: docker
     plan: free
-    repo: https://github.com/usuario/mi-sitio-php
+    repo: https://github.com/a1-2-ang/Proyecto
     branch: main
     dockerfilePath: ./Dockerfile
